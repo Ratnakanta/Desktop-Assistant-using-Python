@@ -17,7 +17,7 @@ conda env list
 
 ```bash
 conda activate assistant1
-``
+```
 
 4.Install all the packages present in the requirements file.
 
