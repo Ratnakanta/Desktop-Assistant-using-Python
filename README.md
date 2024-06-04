@@ -24,6 +24,11 @@ conda activate assistant1
 ```bash
 pip install -r Requirements.txt
 ```
+5. To Run streamlit in terminal
+
+```bash
+streamlit run app.py
+```
 
 
 # Required Github Commands
@@ -36,3 +41,5 @@ git commit -m "message"
 git push origin main
 
 ```
+
+AIzaSyC1vHL5R7bxVR0r6e3qS0j03_VAJyr-d_A

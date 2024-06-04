@@ -14,7 +14,7 @@ voices = engine.getProperty('voices')
 # print(voices[1].id)
 
 
-engine.setProperty('voice', voices[1].id)
+engine.setProperty('voice', voices[0].id)
 engine.setProperty('rate', 150)
 
 # Speak function
@@ -49,8 +49,59 @@ def takeCommand():
             print("Say that again please...")
             return "None"
         return query
+#The function for wish me by using time
+def wish_me():
+    hour = (datetime.datetime.now().hour)
+    if hour>=0 and hour<12:
+        speak("Good morning sir. How are you doing")
+    
+    elif hour>=12 and hour<18:
+        speak("Good afternoon sir. How are you doing")
 
+    else:
+        speak("Good evening sir. How are you doing")
+    
+    speak("I am JARVIS. Tell me sir how can i help you")
+
+
+
+
+
+
+if __name__ == '__main__':  #we can call any function inside this.
    
+   wish_me()
+   while True:
+        
+    query = takeCommand().lower()
+
+    if "wikipedia" in query:
+      speak("Searching wikipedia")
+      query = query.replace('wikipedia', "")
+      results = wikipedia.summary(query, sentences = 2)
+      speak("According to wikipedia")
+      print(results)
+      speak(results)
 
 
+    elif "youtube" in query:
+            speak("Opening YouTube")
+            webbrowser.open("youtube.com")
+    elif "google" in query:
+            speak("Opening google")
+            webbrowser.open("google.com")
+
+
+    elif "github" in query:
+            speak("Opening github")
+            webbrowser.open("github.com")
+#This query for say the times
+    elif 'time' in query:
+        strTime = datetime.datetime.now().strftime("%H:%M:%S")
+        speak(f"Sir the time is {strTime}")
+
+#This query for quit Jarvis
+    elif 'good bye' in query:
+        speak("ok sir. I am always here for you. bye bye")
+        exit()
 
