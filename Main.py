@@ -50,8 +50,7 @@ def takeCommand():
             return "None"
         return query
 
-text=takeCommand()
-speak(text)   
+   
 
 
 
